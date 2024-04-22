@@ -183,12 +183,16 @@ function App() {
 
   const handleCourseClick = (courseCode) => {
     setHighlightedCourse(courseCode);
+    console.log(CourseInfo[courseCode]);
     setTimeout(() => {
       setHighlightedCourse(null);
     }, 2000);
   };
   return (
     <>
+    <div>
+    {highlightedCourse && <p>{CourseInfo[highlightedCourse]}</p>}
+    </div>
       <div className="container">
         <h1 className="text-center mb-4">Class Routine</h1>
         <table className="table table-bordered table-striped">
